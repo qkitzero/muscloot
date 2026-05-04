@@ -1,17 +1,17 @@
 services:
-  # frontend:
-  #   build:
-  #     context: ../muscloot-frontend
-  #     dockerfile: ./Dockerfile
-  #   container_name: muscloot-frontend
-  #   restart: always
-  #   environment:
-  #     - NEXT_PUBLIC_SITE_URL=${FRONTEND_NEXT_PUBLIC_SITE_URL}
-  #     - AUTH_SERVICE_URL=${FRONTEND_AUTH_SERVICE_URL}
-  #     - USER_SERVICE_URL=${FRONTEND_USER_SERVICE_URL}
-  #     - WORKOUT_SERVICE_URL=${FRONTEND_WORKOUT_SERVICE_URL}
-  #   ports:
-  #     - "${FRONTEND_HOST_PORT}:${FRONTEND_CONTAINER_PORT}"
+  frontend:
+    build:
+      context: ../muscloot-frontend
+      dockerfile: ./Dockerfile
+    container_name: muscloot-frontend
+    restart: always
+    environment:
+      - NEXT_PUBLIC_SITE_URL=${FRONTEND_NEXT_PUBLIC_SITE_URL}
+      - AUTH_SERVICE_URL=${FRONTEND_AUTH_SERVICE_URL}
+      - USER_SERVICE_URL=${FRONTEND_USER_SERVICE_URL}
+      - WORKOUT_SERVICE_URL=${FRONTEND_WORKOUT_SERVICE_URL}
+    ports:
+      - "${FRONTEND_HOST_PORT}:${FRONTEND_CONTAINER_PORT}"
 
   auth-server:
     build:
